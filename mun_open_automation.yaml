@@ -1,0 +1,22 @@
+alias: mun
+description: 문이 열리면 알림 시스템 작동
+trigger:
+  - type: turned_off
+    platform: device
+    device_id: a120c7631a9e82ead38ef47b98b22a34
+    entity_id: binary_sensor.door_sensor
+    domain: binary_sensor
+    id: 침입 감지
+condition: []
+action:
+  - device_id: 648fc6558dfcf3612d3884a095a4c35f
+    domain: mobile_app
+    type: notify
+    message: 문이 열렸습니다!
+    title: 이벤트
+  - device_id: e92ed043fa064329df6d34994c72b9ee
+    domain: mobile_app
+    type: notify
+    message: 문이 열렸습니다!
+    title: 이벤트
+mode: single
